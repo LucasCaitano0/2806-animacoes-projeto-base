@@ -4,12 +4,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
+import { AnimationStyleMetadata, style, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
-  styleUrls: ['./lista-tarefas.component.css']
+  styleUrls: ['./lista-tarefas.component.css'],
+  animations: [trigger('highlightedState', [
+    state('default', style({
+      border: '2px solid #B2B6FF'
+    })),
+    state('highlighted', style({
+      border: '4px solid #B2B6FF'
+    }))
+  ])]
 })
+
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
   formAberto: boolean = false;
@@ -139,3 +149,7 @@ export class ListaTarefasComponent implements OnInit {
     }
   }
 }
+function state(arg0: string, arg1: AnimationStyleMetadata): import("@angular/animations").AnimationMetadata {
+  throw new Error('Function not implemented.');
+}
+
