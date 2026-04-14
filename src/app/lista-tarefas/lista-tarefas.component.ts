@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
 import { AnimationStyleMetadata, style, trigger } from '@angular/animations';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-lista-tarefas',
@@ -151,7 +152,6 @@ export class ListaTarefasComponent implements OnInit {
     }
   }
 }
-function state(arg0: string, arg1: AnimationStyleMetadata): import("@angular/animations").AnimationMetadata {
-  throw new Error('Function not implemented.');
-}
+
+
 
